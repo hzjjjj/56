@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=[device-width], initial-scale=1.0">
+	<!-- <script src="https://unpkg.com/htmx.org@1.9.6"></script> -->
+    <script src="/static/htmx.min.js"></script>
+    <!-- 引入htmx为网页添加AJAX功能 -->
+    <title>舟而复始The Book of Changes老王聊玄学易经</title>
+    <style>
+        #spinne {color:sienna;}
+        body {color: #333;font-size: 18px;
+            background: burlywood url(/static/64gua.png) left top no-repeat;
+        }
+        .main {
+             width: 80%;
+             background-color: #fff;
+             margin-left: auto;
+             margin-right: auto;
+             padding: 20px;
+             background: #fff url(/static/64gua.png) right bottom no-repeat;
+             background-size:25%;
+            }
+        p {margin-left:20px;}
+        a {text-decoration:none;color:#336699;}
+        a:hover {text-decoration:underline;color:#333;}
+        li {float:left;list-style-type: none;margin-right: 15PX;}
+        input {border-radius: 3px;width: 120px;padding-left: 10px;margin-left: 12px;}
+        footer {font-size: 10px;text-align: center;margin-top: 12px;}
+    </style>
+</head>
+<body>
+    <div class="main">
+    <main>
+    <h2> 舟而复始 - The Website of Changes</h2>
+    <p><b>1、相数：</b>输入0-7的数字得到对应的八卦和其二进制数字</p>
+    <p>Input numbers 0-7 to obtain the corresponding 8 Diagrams and its binary digits.</p>
+    <form action="/please" method="post" hx-indicator="#spinner" hx-post="/please"  hx-target="#please" hx-swap="beforebegin">
+        <input type="text" name="num" placeholder=" ☰   0 ~ 7 " maxlength="1">
+        <button type="submit"> 问卦
+            <!-- <input type="number" name="quantity" min="1" max="5"> -->
+            <span id="spinner" class="htmx-indicator">》</span>
+        </button>
+    </form>
+
+    <div id="please">
+    </div>
+    <p><b>2、高岛易占：</b>三个填空分别是上卦数字和下卦数字（1-8），动爻数字（1-6）</p>
+    <p>Takashima : 3 fill in the blank are upper and lower digits (1-8), and moving line numbers (1-6).</p>
+    <form action="/divination" method="post" hx-indicator="#spinner" hx-post="/divination"  hx-target="#divination" hx-swap="beforebegin">
+        <input type="text" name="num1" placeholder=" ☷ 上卦 1 ~ 8 " maxlength="1">
+        <input type="text" name="num2" placeholder=" 下卦 1 ~ 8 " maxlength="1">
+        <input type="text" name="num3" placeholder=" 动爻 1 ~ 6" maxlength="1">
+        <button type="submit"> 至诚
+            <!-- 实现服务器响应加载效果 -->
+            <span id="spinner" class="htmx-indicator">》神明</span>
+        </button>
+    </form>
+
+    <div id="divination">
+    </div>
+    <p>本卦详解请参考易安居网的文章:
+    <a href="https://www.zhouyi.cc/zhouyi/yijing64/">《按周易卦序查阅64卦》</a>
+    </p>
+            <p><h3> 老王来了聊玄学易经视频: Study the Book of Changes?</h3></p>
+                <p><a href="https://www.youtube.com/watch?v=9xwB5KQXHbQ">1 手把手教你成为易经通灵大师</a></p>
+                <p><a href="https://www.youtube.com/watch?v=g8AIJbG9UNo">2 易学二进制与摄提格（STIGER）指向三皇来自苏美尔？跟着邵雍学宋朝口音！</a></p>
+            <h3>  About me </h3><img src="/static/w-logo.jpg" alt="pic">
+            <p>资本大鳄王吉舟的单口秀，在加拿大讲述中国的资本圈老故事……</p>
+           <p>☯ <a href="https://www.youtube.com/@dlw2023/videos">老王来了油管视频: YouTube</a>  | ☯<a href="https://blog.sina.com.cn/s/articlelist_1686789045_0_1.html">老王的新浪博客: Blog Articles </a> 
+            <p>☯ Twitter推特X:@dlw20202020  ☯ 电子邮件：<a href="mailto:wjz5788@gmail.com">wjz5788@gmail.com</a></p>
+            
+
+</main>
+</div>
+<footer> © 2023/12/12 <a href="mailto:wjz5788@gmail.com">@dlw20202020</a> Powered By <a href="https://go.dev">GO</a> <a href="https://htmx.org">htmX</a> & <a href="https://www.youtube.com/@juanzi8">JH</a></footer> 
+</body>
+<!-- 网站制作hzjjj55@gmail.com -->
+</html>
